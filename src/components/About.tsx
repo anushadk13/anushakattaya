@@ -73,7 +73,7 @@ const About = () => {
                 >
                   <div className="aspect-square bg-gradient-subtle flex items-center justify-center">
                     <div className="text-6xl font-bold text-gradient">
-                      <img src="/public/1745476489487.jpeg" alt="" />
+                      <img src="https://github.com/anushadk13/anushakattaya/blob/main/public/1745476489487.jpeg?raw=true" alt="" />
                     </div>
                   </div>
                 </motion.div>
