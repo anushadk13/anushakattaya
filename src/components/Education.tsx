@@ -38,12 +38,11 @@ const Education = () => {
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="text-primary font-mono text-xl">03.</span>
             <span>Education</span>
             <div className="flex-1 h-px bg-border ml-4" />
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-5">
             {education.map((edu, index) => (
               <div
                 key={edu.institution}
@@ -59,36 +58,18 @@ const Education = () => {
                     {edu.duration}
                   </div>
                 </div>
-                
+
                 <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                   {edu.institution}
                 </h3>
-                
+
                 <p className="text-primary font-medium mb-1">{edu.degree}</p>
-                
+
                 {edu.field && (
                   <p className="text-sm text-muted-foreground">{edu.field}</p>
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Certifications */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
-              <span className="text-primary">Certifications</span>
-            </h3>
-            
-            <div className="flex flex-wrap gap-3">
-              {certifications.map((cert) => (
-                <span
-                  key={cert}
-                  className="px-4 py-2 bg-secondary border border-border rounded-full text-sm text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
-                >
-                  {cert}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>

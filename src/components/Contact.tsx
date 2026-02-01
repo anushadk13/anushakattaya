@@ -6,15 +6,15 @@ const Contact = () => {
     <section id="contact" className="py-24">
       <div className="container px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-primary font-mono mb-4">05. What's Next?</p>
-          
+          <p className="text-primary font-mono mb-4">What's Next?</p>
+
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Get In Touch
           </h2>
-          
+
           <p className="text-muted-foreground mb-10 leading-relaxed">
-            I'm currently looking for new opportunities and would love to hear from you! 
-            Whether you have a question, a project idea, or just want to say hi, 
+            I'm currently looking for new opportunities and would love to hear from you!
+            Whether you have a question, a project idea, or just want to say hi,
             feel free to reach out. I'll do my best to get back to you!
           </p>
 
@@ -29,7 +29,7 @@ const Contact = () => {
                 Say Hello
               </a>
             </Button>
-            
+
             <Button
               asChild
               variant="outline"
@@ -55,21 +55,12 @@ const Contact = () => {
               <Mail className="w-4 h-4" />
               anushadharma1@gmail.com
             </a>
-            
+
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
               Bengaluru, Karnataka, India
             </span>
-            
-            <a
-              href="https://anushadkportfolioo.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-primary transition-colors"
-            >
-              <ExternalLink className="w-4 h-4" />
-              Portfolio
-            </a>
+
           </div>
         </div>
       </div>

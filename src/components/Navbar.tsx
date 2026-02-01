@@ -25,11 +25,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg shadow-lg border-b border-border"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-background/80 backdrop-blur-lg shadow-lg border-b border-border"
+        : "bg-transparent"
+        }`}
     >
       <div className="container px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -49,7 +48,7 @@ const Navbar = () => {
                 href={link.href}
                 className="px-4 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                <span className="text-primary font-mono mr-1">0{index + 1}.</span>
+
                 {link.name}
               </a>
             ))}
@@ -59,7 +58,7 @@ const Navbar = () => {
               size="sm"
               className="ml-4 border-primary text-primary hover:bg-primary/10"
             >
-              <a href="mailto:anushadharma1@gmail.com">Resume</a>
+              <a href="https://drive.google.com/file/d/1hCQvi6TUUNNFtpXOUE7BqbKmpFKQFMMn/view?usp=share_link" target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
           </div>
 
@@ -76,9 +75,8 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="bg-card/95 backdrop-blur-lg border-t border-border px-6 py-4">
           {navLinks.map((link, index) => (
@@ -88,7 +86,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className="block py-3 text-muted-foreground hover:text-primary transition-colors"
             >
-              <span className="text-primary font-mono mr-2">0{index + 1}.</span>
+
               {link.name}
             </a>
           ))}
@@ -98,7 +96,7 @@ const Navbar = () => {
             size="sm"
             className="mt-4 w-full border-primary text-primary hover:bg-primary/10"
           >
-            <a href="mailto:anushadharma1@gmail.com">Resume</a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           </Button>
         </div>
       </div>

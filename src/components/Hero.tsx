@@ -18,20 +18,18 @@ const Hero = () => {
           <p className="text-primary font-mono text-sm md:text-base mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Hi, my name is
           </p>
-          
+
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <span className="text-foreground">Anusha </span>
             <span className="text-gradient">Dharma Kattaya</span>
           </h1>
-          
+
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-muted-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             Software Developer & AI Enthusiast
           </h2>
-          
+
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            I'm a passionate developer specializing in AI, Machine Learning, and NLP. 
-            Currently building innovative solutions at Skypoint, focused on creating 
-            intelligent systems that make a real impact.
+            I'm an MS in Data Science student passionate about AI, Machine Learning, and the data-driven insights that power intelligent systems. My focus lies at the intersection of advanced analytics and ML, where I leverage statistical methods, deep learning frameworks, and big data technologies to extract meaningful patterns from complex datasets. I'm driven by exploring innovative approaches that solve real-world problems and uncover insights that create tangible impact.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-up" style={{ animationDelay: "0.5s" }}>
@@ -42,14 +40,14 @@ const Hero = () => {
             >
               <a href="#contact">Get In Touch</a>
             </Button>
-            <Button
+            {/* <Button
               asChild
               variant="outline"
               size="lg"
               className="border-primary/50 text-primary hover:bg-primary/10"
             >
               <a href="#experience">View My Work</a>
-            </Button>
+            </Button> */}
           </div>
 
           <div className="flex items-center justify-center gap-6 animate-fade-up" style={{ animationDelay: "0.6s" }}>
@@ -70,7 +68,7 @@ const Hero = () => {
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/anushadk13"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors p-2"

@@ -4,23 +4,23 @@ const skillCategories = [
   {
     title: "AI & ML",
     icon: Brain,
-    skills: ["Machine Learning", "Natural Language Processing", "YOLOv5", "Langflow"],
+    skills: ["Machine Learning", "Natural Language Processing", "Large Language Models (LLMs)", "AI Agents", "Prompt Engineering", "LangChain", "RAG"],
   },
   {
     title: "Programming",
     icon: Code,
-    skills: ["Python", "C++", "JavaScript", "HTML/CSS"],
+    skills: ["Python", "C++"],
   },
   {
     title: "Data & Cloud",
     icon: Database,
-    skills: ["SQL", "MySQL", "AWS Cloud"],
+    skills: ["Azure", "Azure Cosmos DB", "Azure Key Vault", "Azure Storage Account", "Docker", "Kubernetes", "CI/CD", "SQL", "ChromaDB"],
   },
   {
-    title: "Hardware",
-    icon: Cpu,
-    skills: ["Arduino Uno", "OpenCV", "Electronics"],
-  },
+    title: "Frontend & Backend",
+    icon: Code,
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "FastAPI", "Flask", "REST APIs"],
+  }
 ];
 
 const languages = [
@@ -35,7 +35,6 @@ const Skills = () => {
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="text-primary font-mono text-xl">04.</span>
             <span>Skills</span>
             <div className="flex-1 h-px bg-border ml-4" />
           </h2>
@@ -57,7 +56,7 @@ const Skills = () => {
                       {category.title}
                     </h3>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill) => (
                       <span

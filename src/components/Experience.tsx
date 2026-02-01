@@ -30,7 +30,6 @@ const Experience = () => {
       <div className="container px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-            <span className="text-primary font-mono text-xl">02.</span>
             <span>Experience</span>
             <div className="flex-1 h-px bg-border ml-4" />
           </h2>
@@ -42,17 +41,15 @@ const Experience = () => {
             {experiences.map((exp, index) => (
               <div
                 key={exp.company}
-                className={`relative mb-12 last:mb-0 md:w-1/2 ${
-                  index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"
-                }`}
+                className={`relative mb-12 last:mb-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"
+                  }`}
               >
                 {/* Timeline dot */}
                 <div
-                  className={`absolute top-0 w-4 h-4 rounded-full bg-primary glow-primary ${
-                    index % 2 === 0
+                  className={`absolute top-0 w-4 h-4 rounded-full bg-primary glow-primary ${index % 2 === 0
                       ? "left-0 md:left-auto md:-right-2"
                       : "left-0 md:-left-2"
-                  }`}
+                    }`}
                 />
 
                 <div
@@ -63,11 +60,11 @@ const Experience = () => {
                       <Briefcase className="w-4 h-4" />
                       <span className="font-mono text-sm">{exp.company}</span>
                     </div>
-                    
+
                     <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                       {exp.role}
                     </h3>
-                    
+
                     <div className={`flex flex-wrap gap-4 text-sm text-muted-foreground mb-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
@@ -78,7 +75,7 @@ const Experience = () => {
                         {exp.location}
                       </span>
                     </div>
-                    
+
                     <p className="text-muted-foreground text-sm">
                       {exp.description}
                     </p>
