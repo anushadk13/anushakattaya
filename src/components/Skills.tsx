@@ -1,4 +1,6 @@
 import { Code, Brain, Database, Cpu } from "lucide-react";
+import { motion } from "framer-motion";
+import { staggerContainer, staggerContainerFast, scaleIn, scrollReveal, viewportSettings } from "@/lib/animations";
 
 const skillCategories = [
   {
@@ -33,60 +35,103 @@ const Skills = () => {
   return (
     <section id="skills" className="py-24 bg-card/50">
       <div className="container px-6">
-        <div className="max-w-4xl mx-auto">
+        <motion.div
+          className="max-w-4xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportSettings}
+          variants={scrollReveal}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
             <span>Skills</span>
             <div className="flex-1 h-px bg-border ml-4" />
           </h2>
 
-          <div className="grid sm:grid-cols-2 gap-6 mb-12">
+          <motion.div
+            className="grid sm:grid-cols-2 gap-6 mb-12"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+          >
             {skillCategories.map((category, index) => {
               const IconComponent = category.icon;
               return (
-                <div
+                <motion.div
                   key={category.title}
                   className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-all group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  variants={scaleIn}
+                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 rounded-lg bg-gradient-primary text-primary-foreground">
+                    <motion.div
+                      className="p-2 rounded-lg bg-gradient-primary text-primary-foreground"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
                       <IconComponent className="w-5 h-5" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
                       {category.title}
                     </h3>
                   </div>
 
-                  <div className="flex flex-wrap gap-2">
+                  <motion.div
+                    className="flex flex-wrap gap-2"
+                    variants={staggerContainerFast}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewportSettings}
+                  >
                     {category.skills.map((skill) => (
-                      <span
+                      <motion.span
                         key={skill}
                         className="px-3 py-1 bg-secondary text-sm text-muted-foreground rounded-md border border-transparent hover:border-primary/30 transition-colors"
+                        variants={scaleIn}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         {skill}
-                      </span>
+                      </motion.span>
                     ))}
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Languages */}
-          <div className="bg-card border border-border rounded-lg p-6">
+          <motion.div
+            className="bg-card border border-border rounded-lg p-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportSettings}
+            variants={scaleIn}
+          >
             <h3 className="text-lg font-semibold mb-4">Languages</h3>
-            <div className="flex flex-wrap gap-6">
+            <motion.div
+              className="flex flex-wrap gap-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+            >
               {languages.map((lang) => (
-                <div key={lang.name} className="flex items-center gap-2">
+                <motion.div
+                  key={lang.name}
+                  className="flex items-center gap-2"
+                  variants={scaleIn}
+                >
                   <span className="text-foreground font-medium">{lang.name}</span>
                   <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full">
                     {lang.level}
                   </span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
