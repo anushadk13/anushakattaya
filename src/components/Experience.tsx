@@ -6,13 +6,13 @@ const experiences = [
   {
     company: "Skypoint",
     role: "Software Developer",
-    duration: "March 2025 - Present",
+    duration: "March 2025 - Jan 2026",
     location: "Bengaluru, Karnataka, India",
     description: "Working on innovative software solutions and AI-powered applications.",
   },
   {
-    company: "Nexus",
-    role: "SDE Intern",
+    company: "Nexus Info",
+    role: "Software Developer",
     duration: "December 2023 - March 2024",
     location: "Coimbatore, Tamil Nadu, India",
     description: "Gained hands-on experience in software development and learned industry best practices.",

@@ -70,7 +70,8 @@ const Hero = () => {
             className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
             variants={fadeInUp}
           >
-            I'm an MS in Data Science student passionate about AI, Machine Learning, and the data-driven insights that power intelligent systems. My focus lies at the intersection of advanced analytics and ML, where I leverage statistical methods, deep learning frameworks, and big data technologies to extract meaningful patterns from complex datasets. I'm driven by exploring innovative approaches that solve real-world problems and uncover insights that create tangible impact.
+            MS in Data Science student passionate about AI, Machine Learning, and using data analytics to build intelligent systems and extract meaningful insights from complex datasets.
+
           </motion.p>
 
           <motion.div

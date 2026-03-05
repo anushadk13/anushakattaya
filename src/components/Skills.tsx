@@ -1,6 +1,6 @@
-import { Code, Brain, Database, Cpu } from "lucide-react";
+import { Code, Brain, Database, Cpu, Award } from "lucide-react";
 import { motion } from "framer-motion";
-import { staggerContainer, staggerContainerFast, scaleIn, scrollReveal, viewportSettings } from "@/lib/animations";
+import { staggerContainer, staggerContainerFast, scaleIn, fadeInUp, scrollReveal, viewportSettings } from "@/lib/animations";
 
 const skillCategories = [
   {
@@ -29,6 +29,14 @@ const languages = [
   { name: "Kannada", level: "Native" },
   { name: "English", level: "Professional" },
   { name: "Hindi", level: "Limited Working" },
+];
+
+const certifications = [
+  { label: "Responsive Web Development", icon: "🌐" },
+  { label: "Microsoft MySQL", icon: "🗄️" },
+  { label: "HTML, CSS, JavaScript (Intermediate)", icon: "💻" },
+  { label: "AWS Cloud", icon: "☁️" },
+  { label: "Programming in C++", icon: "⚙️" },
 ];
 
 const Skills = () => {
@@ -130,7 +138,39 @@ const Skills = () => {
                 </motion.div>
               ))}
             </motion.div>
+            {/* ── Certifications ── */}
+            <motion.div
+              className="mt-16"
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportSettings}
+              variants={staggerContainer}
+            >
+              <motion.div className="flex items-center gap-3 mb-6" variants={fadeInUp}>
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <Award className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold">Certifications</h3>
+              </motion.div>
+
+              <div className="flex flex-wrap gap-3">
+                {certifications.map((cert, i) => (
+                  <motion.div
+                    key={cert.label}
+                    variants={fadeInUp}
+                    custom={i}
+                    whileHover={{ scale: 1.06, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 cursor-default shadow-sm"
+                  >
+                    <span className="text-base">{cert.icon}</span>
+                    <span className="text-sm font-medium text-foreground/85">{cert.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
+
         </motion.div>
       </div>
     </section>

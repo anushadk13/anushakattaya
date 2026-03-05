@@ -80,7 +80,7 @@ const Contact = () => {
 
             <motion.span className="flex items-center gap-2" variants={scaleIn}>
               <MapPin className="w-4 h-4" />
-              Bengaluru, Karnataka, India
+              Adelaide, South Australia, Australia
             </motion.span>
 
           </motion.div>
