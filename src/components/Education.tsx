@@ -37,13 +37,6 @@ const education = [
   },
 ];
 
-const certifications = [
-  { label: "Responsive Web Development", icon: "🌐" },
-  { label: "Microsoft MySQL", icon: "🗄️" },
-  { label: "HTML, CSS, JavaScript (Intermediate)", icon: "💻" },
-  { label: "AWS Cloud", icon: "☁️" },
-  { label: "Programming in C++", icon: "⚙️" },
-];
 
 const Education = () => {
   return (
