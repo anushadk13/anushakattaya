@@ -89,44 +89,60 @@ const QuickSummaryModal = ({ onClose, onOpenChat }: { onClose: () => void; onOpe
 // ── Chatbot ──────────────────────────────────────────────────────────────────
 type Message = { role: "user" | "bot"; text: string };
 
-const BOT_RESPONSES: Record<string, string> = {
-    default:
-        "Hi! I'm Anusha's portfolio assistant 🤖 You can ask me about her skills, experience, education, or how to get in touch!",
-    skills:
-        "Anusha is proficient in Python, SQL, React.js, Machine Learning, NLP, YOLOv5, OpenCV, Azure, Langflow, and Arduino. She loves working at the intersection of AI and data!",
-    experience:
-        "She has built AI-powered healthcare solutions and full-stack apps, working extensively with LLMs, AI agents, and cloud technologies (Azure). She's also well-versed in HL7 FHIR standards.",
-    education:
-        "Anusha is pursuing an MS in Data Science. She has a strong foundation in statistics, deep learning, and big data technologies.",
-    contact:
-        "You can reach Anusha at anushadharma1@gmail.com, connect on LinkedIn (linkedin.com/in/anushadk2), or check out her GitHub (github.com/anushadk13)!",
-    projects:
-        "Anusha has worked on computer vision projects using YOLOv5 & OpenCV, LLM evaluation pipelines, full-stack applications with React & Azure, and IoT solutions with Arduino. Check the Projects section for more details!",
-    hello:
-        "Hello! 👋 Great to meet you! Ask me anything about Anusha's background, skills, or projects.",
-    hi: "Hi there! 👋 I'm here to help you learn more about Anusha. What would you like to know?",
-};
+interface ChatRule {
+    patterns: string[];
+    response: string;
+}
+
+const CHAT_RULES: ChatRule[] = [
+    {
+        patterns: ["hello", "hi", "hey", "greetings"],
+        response: "Hello! 👋 I'm Anusha's portfolio assistant. Ask me anything about her skills, experience, projects, or how to get in touch!",
+    },
+    {
+        patterns: ["skill", "tech", "stack", "language", "coding", "proficient", "know"],
+        response: "Anusha is proficient in Python, SQL, React.js, and Machine Learning. She also works with NLP, YOLOv5, OpenCV, Azure, and Langflow. She loves building intelligent systems!",
+    },
+    {
+        patterns: ["experience", "work", "job", "career", "history", "role", "llm", "agent"],
+        response: "She has experience building AI-powered healthcare solutions and full-stack apps. She's worked extensively with LLMs, AI agents, and cloud technologies like Azure, and understands HL7 FHIR standards.",
+    },
+    {
+        patterns: ["education", "degree", "study", "university", "college", "masters", "ms", "data science"],
+        response: "Anusha is currently pursuing her MS in Data Science. She has a strong foundation in statistics, deep learning, and advanced data analytics.",
+    },
+    {
+        patterns: ["contact", "email", "reach", "linkedin", "message", "talk", "github"],
+        response: "You can reach Anusha via email at anushadharma1@gmail.com. You can also find her on [LinkedIn](https://linkedin.com/in/anushadk2) or check her code on [GitHub](https://github.com/anushadk13)!",
+    },
+    {
+        patterns: ["project", "portfolio", "build", "create", "demo", "app", "icu", "purchase"],
+        response: "Anusha has worked on diverse projects: from a Smart ICU monitoring system to ML models for purchase prediction and AI virtual assistants. You can scroll down to the Projects section to see more!",
+    },
+    {
+        patterns: ["who", "anusha", "about"],
+        response: "Anusha is a Software Developer and AI enthusiast specializing in Data Science. She loves turning complex data into actionable insights and building innovative AI solutions!",
+    }
+];
 
 function getBotReply(input: string): string {
-    const lower = input.toLowerCase();
-    if (lower.includes("skill") || lower.includes("tech") || lower.includes("stack") || lower.includes("language"))
-        return BOT_RESPONSES.skills;
-    if (lower.includes("experience") || lower.includes("work") || lower.includes("job") || lower.includes("llm"))
-        return BOT_RESPONSES.experience;
-    if (lower.includes("education") || lower.includes("degree") || lower.includes("study") || lower.includes("university"))
-        return BOT_RESPONSES.education;
-    if (lower.includes("contact") || lower.includes("email") || lower.includes("reach") || lower.includes("linkedin"))
-        return BOT_RESPONSES.contact;
-    if (lower.includes("project") || lower.includes("portfolio") || lower.includes("built"))
-        return BOT_RESPONSES.projects;
-    if (lower.includes("hello") || lower.includes("hey")) return BOT_RESPONSES.hello;
-    if (lower.includes("hi")) return BOT_RESPONSES.hi;
-    return "That's a great question! You can explore more by browsing the portfolio sections above, or feel free to ask me about Anusha's skills, experience, education, or contact info. 😊";
+    const lowerInput = input.toLowerCase();
+
+    // Find a rule that matches any of the patterns
+    const matchedRule = CHAT_RULES.find(rule =>
+        rule.patterns.some(pattern => lowerInput.includes(pattern))
+    );
+
+    if (matchedRule) {
+        return matchedRule.response;
+    }
+
+    return "That's an interesting question! I might not have a specific answer for that, but feel free to ask about Anusha's skills, experience, education, or her exciting AI projects! 😊";
 }
 
 const Chatbot = ({ onClose }: { onClose: () => void }) => {
     const [messages, setMessages] = useState<Message[]>([
-        { role: "bot", text: BOT_RESPONSES.default },
+        { role: "bot", text: "Hi! I'm Anusha's portfolio assistant 🤖 You can ask me about her skills, experience, education, or how to get in touch!" },
     ]);
     const [input, setInput] = useState("");
     const [typing, setTyping] = useState(false);
