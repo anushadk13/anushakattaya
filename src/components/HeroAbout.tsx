@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Sparkles, MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { ArrowRight, BarChart3, Brain, Code2, Database, Lightbulb, LayoutGrid, Github, Linkedin, Mail, Sparkles, MessageCircle, X, Send, Bot, User, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { staggerContainer, fadeInUp, scaleIn, fadeInLeft, fadeInRight, scrollReveal, viewportSettings } from "@/lib/animations";
@@ -285,74 +285,71 @@ const HeroAbout = () => {
             {/* ── HERO ── */}
             <section
                 id="home"
-                className="relative min-h-screen flex items-center justify-center overflow-hidden"
+                className="relative min-h-screen flex items-center overflow-hidden"
             >
-                {/* Background gradient orbs */}
-                <div className="absolute inset-0 overflow-hidden">
-                    <motion.div
-                        className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
-                        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    <motion.div
-                        className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
-                        animate={{ y: [0, -30, 0], x: [0, -20, 0] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                </div>
+                
 
-                <div className="container relative z-10 px-6 py-20">
+
+                
+
+                <div className="container relative z-10 px-6 pt-28 pb-16">
                     <motion.div
-                        className="max-w-4xl mx-auto text-center"
+                        className="max-w-3xl mx-auto text-center"
                         variants={staggerContainer}
                         initial="hidden"
                         animate="visible"
                     >
-                        <motion.p className="text-primary font-mono text-sm md:text-base mb-4" variants={fadeInUp}>
-                            Hi, my name is
+                        <motion.p className="text-primary font-mono text-sm md:text-base mb-4 flex items-center justify-center gap-4" variants={fadeInUp}>
+                            <span className="h-px w-14 bg-primary/60" /> Hi, my name is <span className="h-px w-14 bg-primary/60" />
                         </motion.p>
 
-                        <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4" variants={fadeInUp}>
-                            <span className="text-foreground">Anusha </span>
-                            <span className="text-gradient">Dharma Kattaya</span>
+                        <motion.h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] mb-6" variants={fadeInUp}>
+                            <span className="block text-foreground">Anusha</span>
+                            <span className="block text-gradient">Dharma Kattaya</span>
                         </motion.h1>
 
                         <motion.h2
-                            className="text-2xl md:text-4xl lg:text-5xl font-semibold text-muted-foreground mb-6"
+                            className="text-xl md:text-3xl font-semibold text-foreground mb-4"
                             variants={fadeInUp}
                         >
-                            Software Developer &amp; AI Enthusiast
+                            AI Engineer | Data Scientist | <span className="text-muted-foreground">Full Stack Developer</span>
                         </motion.h2>
 
                         <motion.p
-                            className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+                            className="text-muted-foreground text-base md:text-lg mb-8 leading-relaxed"
                             variants={fadeInUp}
                         >
-                            MS in Data Science student passionate about AI, Machine Learning, and using data analytics to build intelligent systems and extract meaningful insights from complex datasets.
-
+                            Turning ideas into intelligent, scalable digital solutions.
                         </motion.p>
 
                         {/* CTA Buttons */}
-                        <motion.div
-                            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-                            variants={fadeInUp}
-                        >
+                        <motion.div className="flex flex-wrap items-center justify-center gap-4 mb-12" variants={fadeInUp}>
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                 <Button
                                     asChild
                                     size="lg"
                                     className="bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity glow-primary"
                                 >
-                                    <a href="#contact">Get In Touch</a>
+                                    <a href="#contact">Get In Touch <ArrowRight className="w-4 h-4 ml-2" /></a>
                                 </Button>
                             </motion.div>
 
-                            {/* ✨ Quick Summary button (Aliza-style) */}
+                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    variant="outline"
+                                    className="bg-background/40 backdrop-blur border-foreground/30 hover:border-primary hover:bg-primary/10 transition-all"
+                                >
+                                    <a href="#projects"><LayoutGrid className="w-4 h-4 mr-2" /> View My Work</a>
+                                </Button>
+                            </motion.div>
+
                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                 <Button
                                     size="lg"
-                                    variant="outline"
-                                    className="flex items-center gap-2 border-primary/50 hover:border-primary hover:bg-primary/10 transition-all"
+                                    variant="ghost"
+                                    className="flex items-center gap-2 text-muted-foreground hover:text-primary"
                                     onClick={() => setShowSummary(true)}
                                     id="quick-summary-btn"
                                 >
@@ -362,135 +359,188 @@ const HeroAbout = () => {
                             </motion.div>
                         </motion.div>
 
+                        {/* Feature cards */}
+                        <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl mx-auto" variants={staggerContainer}>
+                            {[
+                                { icon: Brain, title: "AI/ML", desc: "Build intelligent solutions", color: "text-violet-400" },
+                                { icon: BarChart3, title: "Data Science", desc: "From data to insights", color: "text-primary" },
+                                { icon: Code2, title: "Full Stack Development", desc: "Scalable web applications", color: "text-orange-400" },
+                                { icon: Lightbulb, title: "Problem Solving", desc: "Turn ideas into impact", color: "text-yellow-400" },
+                            ].map(({ icon: Icon, title, desc, color }) => (
+                                <motion.div key={title} className="flex flex-col items-center text-center gap-2" variants={scaleIn}>
+                                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-card/70 backdrop-blur border border-border flex items-center justify-center">
+                                        <Icon className={`w-8 h-8 md:w-9 md:h-9 ${color}`} />
+                                    </div>
+                                    <p className="font-semibold text-sm text-foreground">{title}</p>
+                                    <p className="text-xs text-muted-foreground max-w-[9rem]">{desc}</p>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+
                         {/* Social icons */}
                         <motion.div className="flex items-center justify-center gap-6" variants={staggerContainer}>
-                            <motion.a
-                                href="mailto:anushadharma1@gmail.com"
-                                className="text-muted-foreground hover:text-primary transition-colors p-2"
-                                aria-label="Email"
-                                variants={scaleIn}
-                                whileHover={{ scale: 1.2, rotate: 5 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
+                            <motion.a href="mailto:anushadharma1@gmail.com" className="text-muted-foreground hover:text-primary transition-colors p-2" aria-label="Email" variants={scaleIn} whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
                                 <Mail className="w-6 h-6" />
                             </motion.a>
-                            <motion.a
-                                href="https://www.linkedin.com/in/anushadk2"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground hover:text-primary transition-colors p-2"
-                                aria-label="LinkedIn"
-                                variants={scaleIn}
-                                whileHover={{ scale: 1.2, rotate: -5 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
+                            <motion.a href="https://www.linkedin.com/in/anushadk2" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2" aria-label="LinkedIn" variants={scaleIn} whileHover={{ scale: 1.2, rotate: -5 }} whileTap={{ scale: 0.9 }}>
                                 <Linkedin className="w-6 h-6" />
                             </motion.a>
-                            <motion.a
-                                href="https://github.com/anushadk13"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground hover:text-primary transition-colors p-2"
-                                aria-label="GitHub"
-                                variants={scaleIn}
-                                whileHover={{ scale: 1.2, rotate: 5 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
+                            <motion.a href="https://github.com/anushadk13" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2" aria-label="GitHub" variants={scaleIn} whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
                                 <Github className="w-6 h-6" />
                             </motion.a>
                         </motion.div>
-                    </motion.div>
-
-                    {/* Scroll indicator */}
-                    <motion.div
-                        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                        <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-                            <ArrowDown className="w-6 h-6" />
-                        </a>
                     </motion.div>
                 </div>
             </section>
 
             {/* ── ABOUT ── */}
-            <section id="about" className="py-24 relative">
-                <div className="container px-6">
+            <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+                <div className="absolute top-1/3 -right-40 w-[28rem] h-[28rem] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute bottom-0 -left-40 w-[24rem] h-[24rem] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+
+                <div className="container relative px-6">
                     <motion.div
-                        className="max-w-4xl mx-auto"
+                        className="max-w-6xl mx-auto"
                         initial="hidden"
                         whileInView="visible"
                         viewport={viewportSettings}
                         variants={scrollReveal}
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
-                            <span>About Me</span>
-                            <div className="flex-1 h-px bg-border ml-4" />
-                        </h2>
+                        {/* Section heading */}
+                        <div className="text-center mb-16">
+                            <p className="text-primary font-mono text-sm mb-3">About me</p>
+                            <h2 className="text-3xl md:text-5xl font-bold">
+                                Who I <span className="text-gradient">Am</span>
+                            </h2>
+                        </div>
 
-                        <div className="grid md:grid-cols-3 gap-12">
-                            {/* Text content */}
+                        {/* Story + photo */}
+                        <div className="grid md:grid-cols-5 gap-12 md:gap-16 items-center mb-20">
                             <motion.div
-                                className="md:col-span-2 space-y-4"
+                                className="md:col-span-3 space-y-5 text-center md:text-left"
                                 variants={staggerContainer}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={viewportSettings}
                             >
-                                <motion.p className="text-muted-foreground leading-relaxed" variants={fadeInLeft}>
-                                    Results-driven{" "}
-                                    <span className="text-primary">Software Developer</span> with expertise in
-                                    building AI-powered healthcare solutions and fullstack applications. Specialized in{" "}
-                                    <span className="text-primary">
-                                        Large Language Models (LLMs), AI agents, and cloud technologies
-                                    </span>{" "}
-                                    with hands-on experience in developing end-to-end automation workflows.
+                                <motion.h3 className="text-2xl md:text-4xl font-bold leading-tight" variants={fadeInLeft}>
+                                    I build <span className="text-gradient">AI-powered apps</span> that solve real problems.
+                                </motion.h3>
+
+                                <motion.p className="text-muted-foreground leading-relaxed text-base md:text-lg" variants={fadeInLeft}>
+                                    As a <span className="text-foreground font-medium">Software Developer</span>, I've worked on
+                                    full-stack applications and AI solutions using{" "}
+                                    <span className="text-primary">Large Language Models (LLMs)</span> and{" "}
+                                    <span className="text-primary">AI agents</span>. I've built end-to-end automation workflows,
+                                    tested and improved LLMs so they work well in real products, and delivered secure, scalable
+                                    apps on <span className="text-primary">Azure</span>.
                                 </motion.p>
 
-                                <motion.p className="text-muted-foreground leading-relaxed" variants={fadeInLeft}>
-                                    Proficient in{" "}
-                                    <span className="text-primary">React.js, Python, and Azure ecosystem</span> with a
-                                    strong foundation in HL7 FHIR standards and healthcare interoperability.
-                                    Demonstrated ability to evaluate and optimize LLMs for production environments
-                                    while delivering scalable, secure applications using modern DevOps practices.
+                                <motion.p className="text-muted-foreground leading-relaxed text-base md:text-lg" variants={fadeInLeft}>
+                                    I'm currently doing my <span className="text-foreground font-medium">Master's in Data Science</span> to
+                                    deepen my skills in data and machine learning.
                                 </motion.p>
 
-                                <motion.p className="text-muted-foreground leading-relaxed" variants={fadeInLeft}>
-                                    Passionate about leveraging cutting-edge AI technologies to solve real-world
-                                    problems and create meaningful impact. Let's connect and build innovative solutions
-                                    together!
-                                </motion.p>
                             </motion.div>
 
-                            {/* Profile photo */}
                             <motion.div
-                                className="relative group"
+                                className="md:col-span-2 flex justify-center"
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={viewportSettings}
                                 variants={fadeInRight}
                             >
-                                <div className="relative">
-                                    <div className="absolute -inset-2 bg-gradient-primary rounded-lg opacity-20 group-hover:opacity-40 transition-opacity blur-sm" />
+                                <div className="relative group w-64 md:w-full max-w-sm">
+                                    <div className="absolute -inset-2 bg-gradient-primary rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity blur-md" />
                                     <motion.div
-                                        className="relative bg-card rounded-lg overflow-hidden border border-border"
-                                        whileHover={{ scale: 1.05, rotate: 2 }}
+                                        className="relative bg-card rounded-2xl overflow-hidden border border-border"
+                                        whileHover={{ scale: 1.03, rotate: 1 }}
                                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                     >
-                                        <div className="aspect-square bg-gradient-subtle flex items-center justify-center">
-                                            <div className="text-6xl font-bold text-gradient">
-                                                <img
-                                                    src="https://github.com/anushadk13/anushakattaya/blob/main/public/1745476489487.jpeg?raw=true"
-                                                    alt="Anusha Dharma Kattaya"
-                                                />
-                                            </div>
-                                        </div>
+                                        <img
+                                            src="/1745476489487.jpeg"
+                                            alt="Anusha Dharma Kattaya"
+                                            className="w-full aspect-square object-cover object-top"
+                                        />
                                     </motion.div>
-                                    <div className="absolute -inset-2 border-2 border-primary/50 rounded-lg translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform" />
+                                    <div className="absolute -inset-2 border-2 border-primary/40 rounded-2xl translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform" />
                                 </div>
                             </motion.div>
                         </div>
+
+                        {/* Skills */}
+                        <motion.div
+                            id="skills"
+                            className="mb-16 scroll-mt-24"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={viewportSettings}
+                            variants={scrollReveal}
+                        >
+                            <h3 className="text-center text-xl md:text-2xl font-bold mb-8">What I Am Good With</h3>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {[
+                                    {
+                                        icon: Brain,
+                                        title: "AI & ML",
+                                        wide: true,
+                                        skills: ["LLM Applications", "AI Agents", "Agentic Workflows", "RAG", "Knowledge Bases", "LangChain", "Prompt Engineering", "Tool Calling", "Supervised Learning", "Unsupervised Learning"],
+                                    },
+                                    { icon: Database, title: "Programming & Data", skills: ["Python",  "SQL", "Relational & Non-Relational Databases", "Vector Databases", "Git"] },
+                                    { icon: LayoutGrid, title: "Frontend", skills: [ "HTML", "CSS","JavaScript", "ReactJS"] },
+                                    { icon: Users, title: "Soft Skills", skills: ["Problem Solving", "Public Speaking", "Self-learning", "Presentation", "Adaptability", "Leadership", "Teamwork"] },
+                                ].map(({ icon: Icon, title, skills, wide }) => (
+                                    <div
+                                        key={title}
+                                        className={`rounded-xl border border-border bg-card/60 backdrop-blur p-6 hover:border-primary/60 transition-colors ${wide ? "md:col-span-2" : ""}`}
+                                    >
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                                                <Icon className="w-5 h-5 text-primary" />
+                                            </div>
+                                            <p className="font-semibold text-foreground">{title}</p>
+                                        </div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {skills.map((skill) => (
+                                                <span
+                                                    key={skill}
+                                                    className="rounded-full border border-border bg-background/50 px-3 py-1 text-sm text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+                                                >
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Open to roles */}
+                        <motion.div
+                            className="rounded-2xl border border-primary/30 bg-primary/5 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6 text-center md:text-left"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={viewportSettings}
+                            variants={fadeInUp}
+                        >
+                            <div>
+                                <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                                    <span className="relative flex h-2.5 w-2.5">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary" />
+                                    </span>
+                                    <p className="text-sm font-semibold text-primary">Open to opportunities</p>
+                                </div>
+                                <p className="text-muted-foreground">
+                                    I'm open to roles as an <span className="text-foreground">AI Engineer</span>,{" "}
+                                    <span className="text-foreground">Data Scientist</span>, or{" "}
+                                    <span className="text-foreground">Full Stack Developer</span>. Feel free to connect or message me.
+                                </p>
+                            </div>
+                            <Button asChild size="lg" className="shrink-0 bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary">
+                                <a href="#contact">Let's Connect <ArrowRight className="w-4 h-4 ml-2" /></a>
+                            </Button>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>

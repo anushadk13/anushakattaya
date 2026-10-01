@@ -3,14 +3,14 @@ import { staggerContainer, fadeInLeft, fadeInRight, scrollReveal, viewportSettin
 
 const About = () => {
   const skills = [
+    "AI agents",
+    "LLM evaluation",
+    "Automation workflows",
     "Python",
-    "SQL",
-    "Machine Learning",
-    "NLP",
-    "YOLOv5",
-    "OpenCV",
-    "Arduino",
-    "Langflow",
+    "React.js",
+    "Azure",
+    "CI/CD",
+    "HL7 FHIR",
   ];
 
   return (
@@ -37,23 +37,32 @@ const About = () => {
               viewport={viewportSettings}
             >
               <motion.p className="text-muted-foreground leading-relaxed" variants={fadeInLeft}>
-                Results-driven <span className="text-primary">Software Developer</span> with expertise in building
-                AI-powered healthcare solutions and fullstack applications. Specialized in
-                <span className="text-primary"> Large Language Models (LLMs), AI agents, and cloud technologies</span> with
-                hands-on experience in developing end-to-end automation workflows.
+                I build <span className="text-primary">AI-powered applications</span> that solve real problems,
+                especially in healthcare. As a Software Developer, I have worked on full-stack applications and
+                AI solutions using <span className="text-primary">Large Language Models (LLMs) and AI agents</span>.
               </motion.p>
 
               <motion.p className="text-muted-foreground leading-relaxed" variants={fadeInLeft}>
-                Proficient in <span className="text-primary">React.js, Python, and Azure ecosystem</span> with a strong
-                foundation in HL7 FHIR standards and healthcare interoperability. Demonstrated ability to evaluate
-                and optimize LLMs for production environments while delivering scalable, secure applications using
-                modern DevOps practices.
+                I have built end-to-end automation workflows, evaluated and improved LLMs for real products, and
+                delivered secure, scalable applications on <span className="text-primary">Azure</span>. I also work
+                with <span className="text-primary">HL7 FHIR</span> and healthcare interoperability, helping tools
+                fit into the way health systems share data.
               </motion.p>
 
               <motion.p className="text-muted-foreground leading-relaxed" variants={fadeInLeft}>
-                Passionate about leveraging cutting-edge AI technologies to solve real-world problems and
-                create meaningful impact. Let's connect and build innovative solutions together!
+                I am currently pursuing my <span className="text-primary">Master's in Data Science</span> to deepen
+                my skills in data and machine learning. I am open to roles as an
+                <span className="text-primary"> AI Engineer, Data Scientist, or Full Stack Developer</span>.
+                Feel free to connect or message me.
               </motion.p>
+
+              <div className="flex flex-wrap gap-2 pt-2">
+                {skills.map((skill) => (
+                  <span key={skill} className="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground">
+                    {skill}
+                  </span>
+                ))}
+              </div>
 
             </motion.div>
 

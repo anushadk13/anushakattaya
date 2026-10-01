@@ -24,13 +24,6 @@ const certifications = [
         description: "Comprehensive front-end development workshop certifications covering Responsive Web Design, Advanced JS, and React development.",
     },
     {
-        title: "Beginning C++ Programming",
-        issuer: "Udemy",
-        icon: "⚙️",
-        images: ["/images/certificates/C++.jpeg"],
-        description: "From Beginner to Beyond - comprehensive C++ programming course.",
-    },
-    {
         title: "Microsoft SQL Server",
         issuer: "iTroniX Solutions",
         icon: "🗄️",

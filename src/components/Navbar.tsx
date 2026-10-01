@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
+  { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
+  { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -74,9 +75,9 @@ const Navbar = () => {
                 asChild
                 variant="outline"
                 size="sm"
-                className="ml-4 border-primary text-primary hover:bg-primary/10"
+                className="ml-4 rounded-full border-primary text-foreground hover:bg-primary/10"
               >
-                <a href="https://drive.google.com/file/d/1hCQvi6TUUNNFtpXOUE7BqbKmpFKQFMMn/view?usp=share_link" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="/Anusha_DK_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume <Download className="w-4 h-4 ml-2" /></a>
               </Button>
             </motion.div>
           </div>
@@ -129,7 +130,7 @@ const Navbar = () => {
                   size="sm"
                   className="mt-4 w-full border-primary text-primary hover:bg-primary/10"
                 >
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                  <a href="/Anusha_DK_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                 </Button>
               </motion.div>
             </div>
