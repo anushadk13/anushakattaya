@@ -1,9 +1,26 @@
-import { Github, ExternalLink, Code2, Database, Globe, Lightbulb, ArrowRight } from "lucide-react";
+import { Github, ExternalLink, Code2, Database, Globe, Lightbulb, ArrowRight, ShoppingCart, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, viewportSettings } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 
 const projects = [
+    {
+        title: "HireFlow AI",
+        description: "AI-assisted hiring platform with a Student portal (resume analysis, cover letters, interview prep, career advisor) and an HR portal (JD parsing, resume screening, candidate ranking, assessments, interview scheduling). Powered by Google Gemini with Firebase Auth, Firestore, and Storage.",
+        github: "https://github.com/anushadk13/HireFlowAI_version2",
+        demo: "https://hire-flow-ai-version2.vercel.app",
+        tags: ["React", "FastAPI", "Gemini", "Firebase", "Vite"],
+        icon: Briefcase,
+        color: "from-sky-500/20 to-violet-500/20"
+    },
+    {
+        title: "Personalized Product Recommendation & Dynamic Merchandising",
+        description: "Real-time personalized merchandising engine running 4 ML models (purchase propensity, price elasticity, inventory pressure, demand forecast) with an A/B-testable weighted ranking engine and MMR diversity re-ranking. Served via FastAPI with an MLflow-tracked pipeline, in-memory feature store, drift monitoring, and a Vite dashboard.",
+        github: "https://github.com/anushadk13/Product_Recommendation_sysytem",
+        tags: ["XGBoost", "LightGBM", "FastAPI", "MLflow", "Causal ML", "Vite"],
+        icon: ShoppingCart,
+        color: "from-rose-500/20 to-pink-500/20"
+    },
     {
         title: "Smart ICU & Remote Monitoring System",
         description: "A comprehensive ICU patient monitoring platform featuring real-time data streaming, ML-driven anomaly detection, and a clinical dashboard.",
@@ -12,6 +29,15 @@ const projects = [
         tags: ["React", "TypeScript", "FastAPI", "ML", "MQTT", "Docker"],
         icon: Database,
         color: "from-blue-500/20 to-cyan-500/20"
+    },
+    {
+        title: "Apple Vision Pro Clone",
+        description: "A front-end clone of the Apple Vision Pro landing page, recreating its visuals and layout with HTML, CSS, and JavaScript.",
+        github: "https://github.com/anushadk13/Apple-Vision_pro-Clone",
+        demo: "https://applevisionclones.netlify.app",
+        tags: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+        icon: Globe,
+        color: "from-slate-500/20 to-zinc-500/20"
     },
     {
         title: "Customer Purchase Prediction",

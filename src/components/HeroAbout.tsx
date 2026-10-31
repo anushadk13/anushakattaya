@@ -312,7 +312,7 @@ const HeroAbout = () => {
                             className="text-xl md:text-3xl font-semibold text-foreground mb-4"
                             variants={fadeInUp}
                         >
-                            AI Engineer | Data Scientist | <span className="text-muted-foreground">Full Stack Developer</span>
+                            Software Developer | AI Engineering <span className="text-muted-foreground"> | Full-Stack Development & Machine Learning</span>
                         </motion.h2>
 
                         <motion.p
@@ -363,7 +363,6 @@ const HeroAbout = () => {
                         <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl mx-auto" variants={staggerContainer}>
                             {[
                                 { icon: Brain, title: "AI/ML", desc: "Build intelligent solutions", color: "text-violet-400" },
-                                { icon: BarChart3, title: "Data Science", desc: "From data to insights", color: "text-primary" },
                                 { icon: Code2, title: "Full Stack Development", desc: "Scalable web applications", color: "text-orange-400" },
                                 { icon: Lightbulb, title: "Problem Solving", desc: "Turn ideas into impact", color: "text-yellow-400" },
                             ].map(({ icon: Icon, title, desc, color }) => (
@@ -533,8 +532,8 @@ const HeroAbout = () => {
                                 </div>
                                 <p className="text-muted-foreground">
                                     I'm open to roles as an <span className="text-foreground">AI Engineer</span>,{" "}
-                                    <span className="text-foreground">Data Scientist</span>, or{" "}
-                                    <span className="text-foreground">Full Stack Developer</span>. Feel free to connect or message me.
+                                    <span className="text-foreground">Full Stack Developer</span>, or{" "}
+                                    <span className="text-foreground">Software Engineer</span>. Feel free to connect or message me.
                                 </p>
                             </div>
                             <Button asChild size="lg" className="shrink-0 bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary">
